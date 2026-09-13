@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Sun, Moon } from "lucide-react";
+
 
 import {
   Menu,
@@ -31,11 +31,16 @@ import {
   ExternalLink,
   LogOut,
 } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
+
+
+
 
 const Navbar = () => {
   const location = useLocation();
+  
 
-  const [isRight, setIsRight] = useState(false);
+  
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -372,7 +377,7 @@ const Navbar = () => {
           NAVBAR
       ======================================================= */}
 
-      <header className="sticky top-0 z-[1000] w-full bg-white">
+      <header className="sticky top-0 z-[1000] w-full bg-white dark:bg-black transition-colors duration-300">
 
         <nav className="border-b border-[#e6e6e6]">
 
@@ -1114,54 +1119,7 @@ const Navbar = () => {
 
               <hr className="border-l-1 h-[30px]  border-gray-300 mr-3" />
 
-              <div
-      onClick={() => setIsRight(!isRight)}
-      className="
-        relative
-        h-[28px]
-        w-[50px]
-        cursor-pointer
-        rounded-full
-        border
-        border-[#4B50D8]
-        bg-white
-        px-1
-      "
-    >
-      <div
-        className={`
-          absolute
-          top-1/2
-          flex
-          h-[20px]
-          w-[20px]
-          -translate-y-1/2
-          items-center
-          justify-center
-          rounded-full
-          bg-[#4B50D8]
-          text-white
-          transition-[left]
-          duration-300
-          ease-in-out
-          ${isRight ? "left-[25px]" : "left-[3px]"}
-        `}
-      >
-        <div className="transition-all duration-200">
-          {isRight ? (
-            <Moon
-              size={12}
-              strokeWidth={2}
-            />
-          ) : (
-            <Sun
-              size={12}
-              strokeWidth={2}
-            />
-          )}
-        </div>
-      </div>
-    </div>
+              <ThemeToggle/>
   
 
               <button
