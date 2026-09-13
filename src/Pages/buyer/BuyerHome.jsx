@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import products from "../../data/products";
+import SearchBar from "../../components/common/SearchBar";
 
 const categories = [
   {
@@ -66,7 +67,7 @@ function BuyerHome() {
     <>
       {/* Navbar */}
       <Navbar />
-
+      <SearchBar />
       {/* Hero */}
       <Hero />
 
@@ -87,18 +88,18 @@ function BuyerHome() {
       </section>
 
       {/* Featured Products */}
-<section className="w-full bg-white">
-  <div className="mx-auto w-full max-w-[1440px] px-4 pb-7 sm:px-6 lg:px-10">
+      <section className="w-full bg-white">
+        <div className="mx-auto w-full max-w-[1440px] px-4 pb-7 sm:px-6 lg:px-10">
 
-    {/* Section Header */}
-    <div className="mb-4 flex items-center justify-between">
-      <h2 className="text-[17px] font-bold text-[#172D55] sm:text-[18px]">
-        Featured Products
-      </h2>
+          {/* Section Header */}
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-[17px] font-bold text-[#172D55] sm:text-[18px]">
+              Featured Products
+            </h2>
 
-      <Link
-        to="/products"
-        className="
+            <Link
+              to="/products"
+              className="
           text-[14px]
           font-medium
           text-[#4B50D8]
@@ -106,14 +107,14 @@ function BuyerHome() {
           duration-200
           hover:text-[#3940C5]
         "
-      >
-        View All →
-      </Link>
-    </div>
+            >
+              View All →
+            </Link>
+          </div>
 
-    {/* Single Row Product Grid */}
-    <div
-      className="
+          {/* Single Row Product Grid */}
+          <div
+            className="
         grid
         grid-cols-2
         gap-3
@@ -121,28 +122,28 @@ function BuyerHome() {
         md:grid-cols-5
         lg:gap-4
       "
-    >
-      {displayedProducts.map((product) => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          category={product.category}
-          image={product.image}
-          price={product.price}
-          rating={product.rating}
-          reviews={product.reviews}
-        />
-      ))}
-    </div>
+          >
+            {displayedProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                category={product.category}
+                image={product.image}
+                price={product.price}
+                rating={product.rating}
+                reviews={product.reviews}
+              />
+            ))}
+          </div>
 
-    {/* Load More */}
-    {hasMoreProducts && (
-      <div className="mt-7 flex justify-center">
-        <button
-          type="button"
-          onClick={handleLoadMore}
-          className="
+          {/* Load More */}
+          {hasMoreProducts && (
+            <div className="mt-7 flex justify-center">
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                className="
             rounded-full
             border
             border-[#4B50D8]
@@ -158,14 +159,14 @@ function BuyerHome() {
             hover:text-white
             hover:shadow-md
           "
-        >
-          Load More
-        </button>
-      </div>
-    )}
+              >
+                Load More
+              </button>
+            </div>
+          )}
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Deal Banner */}
       <DealBanner />
