@@ -19,18 +19,22 @@ import Orders from "../pages/buyer/Orders";
 import Profile from "../pages/buyer/Profile";
 import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
+import VerifyOTP from "../pages/auth/VerifyOTP";
+import ForgotPassword from "../pages/auth/ForgetPassword";
 import StoreProfile from "../pages/seller/StoreProfile";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<BuyerHome />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/seller" element={<SellerHome />} />
+      <Route path="/verify-otp" element={<VerifyOTP />} />
       <Route path="/seller/dashboard" element={<SellerDashboard />} />
       <Route path="/seller/create-store" element={<CreateStore />} />
-      <Route path="/seller/products" element={<SellerProducts />}/>
-      <Route path="/seller/add-product" element={<AddProduct />}/>
-      <Route path="/seller/orders" element={<SellerOrders />}/>
+      <Route path="/seller/products" element={<SellerProducts />} />
+      <Route path="/seller/add-product" element={<AddProduct />} />
+      <Route path="/seller/orders" element={<SellerOrders />} />
       <Route path="/seller/analytics" element={<Analytics />} />
       <Route path="/seller/Settings" element={<Settings />} />
       <Route path="/products" element={<Products />} />
@@ -39,11 +43,11 @@ function AppRoutes() {
       <Route path="/stores/:id" element={<StoreDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
-      <Route path="/orders" element={<Orders />}/>
+      <Route path="/orders" element={<Orders />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} /> 
-      <Route path="/seller/store" element={<StoreProfile />}/>
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/seller/store" element={<StoreProfile />} />
     </Routes>
   );
 }
